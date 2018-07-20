@@ -37,7 +37,7 @@ export type species = 'RBNU' | 'something-else';
 export type sex = 'male' | 'female' | 'unknown';
 
 export interface Bird {
-  id: string;
+  rfid: string;
   bandCombo: string;
   release: number;
   species: species;
