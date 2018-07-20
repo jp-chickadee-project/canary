@@ -12,3 +12,7 @@ https://github.com/typeorm/typeorm
 start MySQL:
 sudo /etc/init.d/mysql start
 mysql -u root -p
+
+mysql dbname < chickadees.sql
+OR
+mysql -u root -p < chickadees.sql
