@@ -13,6 +13,8 @@
       "mysql": "^2.14.1"
    },
    "scripts": {
-      "start": "ts-node src/index.ts"
+      "start": "ts-node src/index.ts",
+      "migrate:up": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:run",
+      "migrate:down": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:revert"
    }
 }
