@@ -1,4 +1,4 @@
-/*
+
 import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity({name: 'birds'})
@@ -6,7 +6,7 @@ export class Bird {
 
   @PrimaryColumn({ type: 'varchar', length: 16, }) rfid: string;
 
-  @Column({ type: 'varchar', length: 8, }) species: string;
+  @Column({ type: 'varchar', length: 8, nullable: true, }) species: string;
 
   @Column({ type: 'varchar', length: 64, }) captureSite: string;
   @Column({ type: 'varchar', length: 64, }) bandNumber: string;
@@ -36,17 +36,15 @@ export class Bird {
   @Column({ type: 'varchar', length: 16, }) suspectedSex: string;
 
   @Column({ type: 'bigint', precision: 20, }) logTimestamp: number;
-  @Column({ type: 'bigint', precision: 20, }) captureTimestamp: number;
-  @Column({ type: 'bigint', precision: 20, }) netEnterTimestamp: number;
-  @Column({ type: 'bigint', precision: 20, }) netExitTimestamp: number;
-  @Column({ type: 'bigint', precision: 20, }) releasedTimestamp: number;
+  @Column({ type: 'bigint', precision: 20, nullable: true, }) captureTimestamp: number;
+  @Column({ type: 'bigint', precision: 20, nullable: true, }) netEnterTimestamp: number;
+  @Column({ type: 'bigint', precision: 20, nullable: true, }) netExitTimestamp: number;
+  @Column({ type: 'bigint', precision: 20, nullable: true, }) releasedTimestamp: number;
 
   @Column({ type: 'varchar', length: 256, }) notes: string;
   @Column({ type: 'varchar', length: 256, }) weather: string;
 
   @Column({ type: 'varchar', length: 64, }) banders: string;
 
-  @Column({ type: 'varchar', length: 32, }) bandCombo: string;
-  
+  @Column({ type: 'varchar', length: 32, }) bandCombo: string; 
 }
-*/
