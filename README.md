@@ -18,3 +18,4 @@ OR
 mysql -u root -p jpcp_dev < chickadees.sql
 OR
 mysql -u root -p jpcp_dev < src/migration/initial-create.sql
+mysql -u root -p jpcp_dev < src/migration/chickadees.sql (NOT TRACKED)
