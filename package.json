@@ -1,6 +1,6 @@
 {
   "name": "jpcp-models",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Common storage and interfaces for http://jpcp.nmu.edu",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
