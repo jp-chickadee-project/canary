@@ -3,7 +3,7 @@ import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 // TODO make some nice default values, or make them required.
 
-@Entity()
+@Entity({name: 'feeders'})
 export class Feeder {
 
   @PrimaryColumn({
