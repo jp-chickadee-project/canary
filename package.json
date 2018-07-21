@@ -1,12 +1,12 @@
 {
   "name": "jpcp-models",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Common storage and interfaces for http://jpcp.nmu.edu",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "prepare" : "npm run build",
+    "prepare": "npm run build",
     "prebuild": "rm -rf dist",
     "build": "tsc -p",
     "migrate:up": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:run",
