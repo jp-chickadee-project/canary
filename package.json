@@ -1,22 +1,25 @@
 {
-   "name": "jpcp-models",
-   "version": "2.0.0",
-   "description": "Common storage and interfaces for http://jpcp.nmu.edu",
-   "main": "dist/index.js",
-   "types": "dist/index.d.ts",
-   "devDependencies": {
-      "ts-node": "3.3.0",
-      "@types/node": "^8.0.29",
-      "typescript": "2.5.2"
-   },
-   "dependencies": {
-      "typeorm": "0.2.7",
-      "reflect-metadata": "^0.1.10",
-      "mysql": "^2.14.1"
-   },
-   "scripts": {
-      "start": "ts-node src/index.ts",
-      "migrate:up": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:run",
-      "migrate:down": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:revert"
-   }
+  "name": "jpcp-models",
+  "version": "2.0.0",
+  "description": "Common storage and interfaces for http://jpcp.nmu.edu",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "prepare" : "npm run build",
+    "prebuild": "rm -rf dist",
+    "build": "tsc -p",
+    "migrate:up": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:run",
+    "migrate:down": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:revert"
+  },
+  "dependencies": {
+    "typeorm": "0.2.7",
+    "reflect-metadata": "^0.1.10",
+    "mysql": "^2.14.1"
+  },
+  "devDependencies": {
+    "ts-node": "3.3.0",
+    "@types/node": "^8.0.29",
+    "typescript": "2.5.2"
+  }
 }
