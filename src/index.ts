@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import { createConnection, getRepository } from 'typeorm';
+import { createConnection, getRepository, Repository } from 'typeorm';
 
 import {
   Bird,
@@ -13,9 +13,13 @@ const Feeders = getRepository(Feeder);
 const Visits = getRepository(Visit);
 
 export {
+  Bird,
   Birds,
+  Feeder,
   Feeders,
+  Visit,
   Visits,
+  Repository,
 };
 
 export {
