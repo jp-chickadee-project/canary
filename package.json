@@ -1,7 +1,9 @@
 {
    "name": "jpcp-models",
    "version": "1.0.0",
-   "description": "Awesome project developed with TypeORM.",
+   "description": "Common storage and interfaces for http://jpcp.nmu.edu",
+   "main": "dist/index.js",
+   "types": "dist/index.d.ts",
    "devDependencies": {
       "ts-node": "3.3.0",
       "@types/node": "^8.0.29",
