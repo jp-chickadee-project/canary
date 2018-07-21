@@ -1,18 +1,23 @@
 import 'reflect-metadata';
-import { createConnection } from 'typeorm';
 
-import { Bird, Feeder, Visit } from './entity';
+import { createConnection, getRepository } from 'typeorm';
 
-createConnection().then(async connection => {
+import {
+  Bird,
+  Feeder,
+  Visit,
+} from './entity';
 
-  console.log("Loading things from the database...");
-  const feeders = await connection.manager.find(Feeder);
-  console.log("feeder count: ", feeders.length);
+const Birds = getRepository(Bird);
+const Feeders = getRepository(Feeder);
+const Visits = getRepository(Visit);
 
-  const birds = await connection.manager.find(Bird);
-  console.log("bird count: ", birds.length);
+export {
+  Birds,
+  Feeders,
+  Visits,
+};
 
-  const visits = await connection.manager.find(Visit);
-  console.log("visit count: ", visits.length);
-
-}).catch(error => console.log(error));
+export {
+  createConnection,
+};
