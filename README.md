@@ -15,4 +15,6 @@ mysql -u root -p
 
 mysql dbname < chickadees.sql
 OR
-mysql -u root -p < chickadees.sql
+mysql -u root -p jpcp_dev < chickadees.sql
+OR
+mysql -u root -p jpcp_dev < src/migration/initial-create.sql
