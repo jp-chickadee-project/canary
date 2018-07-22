@@ -19,7 +19,7 @@
 | Verb | Endpoint | Returns |
 |-|-|-|
 | GET | /api/birds | List of all birds |
-| GET | /api/birds/:rfid | The bird |
+| GET | /api/birds/:id | The bird |
 
 ```
 TODO: netEnter, netExit, and release are the same most of the time. Maybe only keep release.
@@ -27,7 +27,7 @@ TODO: netEnter, netExit, and release are the same most of the time. Maybe only k
 // proposed format
 
 {
-  "rfid": "011016A269",
+  "id": "011016A269",
   "bandCombo": "g0/Y#",
   "biometrics": {
     "species": "RBNU",
