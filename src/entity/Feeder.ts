@@ -20,16 +20,12 @@ export class Feeder {
   name: string;
 
   @Column({
-    type: 'decimal',
-    precision: 10,
-    scale: 7,
+    type: 'double',
   })
   latitude: number;
 
   @Column({
-    type: 'decimal',
-    precision: 10,
-    scale: 7,
+    type: 'double',
   })
   longitude: number;
 }
