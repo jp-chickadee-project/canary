@@ -7,3 +7,8 @@ export interface Visit {
   feeder: string | Feeder;
   visitTimestamp: number;
 }
+
+
+/* thoughts:
+http://localhost:8155/api/visits?populate=true
+*/
