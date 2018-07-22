@@ -7,6 +7,20 @@ import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import { keyBy, map } from 'lodash';
 
+import {
+  Bird,
+  Feeder,
+  Visit,
+} from './entity';
+
+import {
+  Bird as IBird,
+  Birds,
+  Feeders,
+  species,
+  sex
+} from 'jpcp-models';
+
 const app: express.Application = express();
 
 app.use(bodyParser.json());
@@ -23,21 +37,6 @@ var corsOptions = {
     }
   }
 }
-
-import {
-  Bird,
-  Feeder,
-  Visit,
-} from './entity';
-
-import { Bird as IBird, species, sex } from './interface/Bird';
-
-type Dictionary<T> = { [key: string]: T };
-type Birds = Dictionary<IBird>;
-
-import {
-  Feeders,
-} from 'jpcp-models';
 
 console.log('test');
 

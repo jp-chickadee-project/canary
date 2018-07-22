@@ -1,6 +1,5 @@
 
-import { Bird } from './Bird';
-import { Feeder } from 'jpcp-models';
+import { Bird, Feeder } from 'jpcp-models';
 
 export interface Visit<B = Bird | string, F = Feeder | string> {
   bird: B;
