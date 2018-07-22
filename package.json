@@ -13,7 +13,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
-    "jpcp-models": "^10.0.0",
+    "jpcp-models": "^11.0.0",
     "lodash": "^4.17.10",
     "mysql": "^2.14.1",
     "reflect-metadata": "^0.1.10",

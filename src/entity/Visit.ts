@@ -1,7 +1,7 @@
 
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-import { Visit as IVisit } from '../interface/Visit';
+import { Visit as IVisit } from 'jpcp-models';
 
 @Entity('visits')
 export class Visit implements IVisit<string, string> {
