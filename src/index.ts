@@ -4,16 +4,35 @@ import { createConnection } from 'typeorm';
 
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
+import { keyBy } from 'lodash';
 
 const app: express.Application = express();
 
 app.use(bodyParser.json());
+
+app.use(cors());
+
+var whitelist = ['http://localhost:8082', 'http://euclid.nmu.edu']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
 
 import {
   Bird,
   Feeder,
   Visit,
 } from './entity';
+
+import {
+  Feeders,
+} from 'jpcp-models';
 
 console.log('test');
 
@@ -43,7 +62,10 @@ createConnection()
 
     app.get('/api/feeders', (req, res) => {
       feeders.find()
-        .then(feeders => res.json(feeders))
+        .then(list => {
+          const map: Feeders = keyBy(list, 'id');
+          res.json(map);
+        })
         .catch(error => console.log(error));
     });
 
@@ -60,7 +82,7 @@ createConnection()
         .catch(error => console.log(error));
     });
     
-    const port = 8155;
+    const port = 8156;
     app.listen(port, () => {
       console.log(`running on http://localhost:${port}/`);
     });
