@@ -3,7 +3,7 @@
 ## Visits
 | Verb | Endpoint | Returns |
 |-|-|-|
-| GET | /api/visits | List of visits |
+| GET | /api/visits | List of visits (limit 50) |
 
 
 ## Birds
