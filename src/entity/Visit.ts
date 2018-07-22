@@ -11,7 +11,7 @@ export class Visit {
   @Column({ type: 'varchar', length: 16, }) rfid: string;
   @Column({ type: 'char', length: 4, }) feederID: string;
 
-  @Column({ type: 'bigint', precision: 20, nullable: true, }) visitTimestamp: number;
+  @Column({ type: 'bigint', precision: 20, nullable: false, }) visitTimestamp: number;
 
   @Column({ type: 'varchar', length: 32, }) bandCombo: string;
 }
