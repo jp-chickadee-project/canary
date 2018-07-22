@@ -7,11 +7,11 @@
 
 ```
 {
-  "id":1,
-  "bird":"011017121E",
-  "feeder":"HMST",
-  "timestamp":"1506782685", // TODO: make an integer
-  "bandCombo":"#O/wg" // TODO: remove
+  "id": 1,
+  "bird": "011017121E",
+  "feeder": "HMST",
+  "timestamp": "1506782685", // TODO: make an integer
+  "bandCombo": "#O/wg" // TODO: remove
 }
 ```
 
