@@ -6,7 +6,7 @@ import { Entity, PrimaryColumn, Column } from 'typeorm';
 @Entity({name: 'feeders'})
 export class Feeder {
   @PrimaryColumn({ type: 'char', length: 4, }) id: string;
-  @Column({ name: 'fullName', type: 'varchar', length: 64, }) name: string;
+  @Column() name: string;
   @Column({ type: 'double', }) latitude: number;
   @Column({ type: 'double', }) longitude: number;
 }
