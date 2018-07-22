@@ -18,7 +18,7 @@
 ## Birds
 | Verb | Endpoint | Returns |
 |-|-|-|
-| GET | /api/birds | List of all birds |
+| GET | /api/birds | Dictionary of birds, keyed by id (rfid) |
 | GET | /api/birds/:id | The bird |
 
 ```
@@ -68,7 +68,7 @@ TODO: netEnter, netExit, and release are the same most of the time. Maybe only k
 ## Feeders
 | Verb | Endpoint | Returns |
 |-|-|-|
-| GET | /api/feeders | List of all feeders |
+| GET | /api/feeders | Dictionary of feeders, keyed by id |
 | GET | /api/feeders/:id | The feeder |   
 
 notes:
