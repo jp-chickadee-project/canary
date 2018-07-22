@@ -32,6 +32,7 @@ mysql -u root -p jpcp_dev < src/migration/initial-create.sql
 
 
 ##setting up the database for development
+make sure this project isn't currently running
 mysql -u root -p
 create database jpcp_dev;
 mysql -u root -p jpcp_dev < src/migration/chickadees.sql (NOT TRACKED)
