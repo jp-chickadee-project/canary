@@ -1,11 +1,12 @@
 
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+
+import { Visit as IVisit } from '../interface/Visit';
 
 @Entity('visits')
-export class Visit {
+export class Visit implements IVisit<string, string> {
 
   @PrimaryGeneratedColumn() private id: number;
-  // TODO: make migration for auto id.
   // TODO: how is this table sorted?
   // TODO: not sure if bird and feeder should be foreign keys because then we would lose ghost reads 
 
