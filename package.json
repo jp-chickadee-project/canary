@@ -1,6 +1,6 @@
 {
-  "name": "jpcp-models",
-  "version": "6.0.0",
+  "name": "jpcp-crud-api",
+  "version": "1.0.0",
   "description": "CRUD api for http://jpcp.nmu.edu",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "mysql": "^2.14.1",
     "reflect-metadata": "^0.1.10",
