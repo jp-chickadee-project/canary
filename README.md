@@ -1,13 +1,19 @@
-# Awesome Project Build with TypeORM
-        
-Steps to run this project:
 
-1. Run `npm i` command
-2. Setup database settings inside `ormconfig.json` file
-3. Run `npm start` command
 
-https://github.com/typeorm/typeorm
+## Visits
+| Verb | Endpoint | Returns |
+|-|-|-|
+| GET | /api/visits | List of visits |
 
+
+## Birds
+
+| Verb | Endpoint | Returns |
+|-|-|-|
+| GET | /api/birds | List of all birds |
+| GET | /api/birds/:rfid | The bird |
+
+notes:
 
 start MySQL:
 sudo /etc/init.d/mysql start
