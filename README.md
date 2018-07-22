@@ -22,7 +22,7 @@
 | GET | /api/birds/:rfid | The bird |
 
 ```
-TODO: netEnter, netExit, and release are the same most of the time. Maybe throw two of them away.
+TODO: netEnter, netExit, and release are the same most of the time. Maybe only keep release.
 
 // proposed format
 
@@ -44,7 +44,7 @@ TODO: netEnter, netExit, and release are the same most of the time. Maybe throw 
     "cap": 0,
     "tarsus": 16.5,
     "birdWeight": 10.2,
-    "tissueSample": "feather",
+    "tissueSample": "feather"
   },
   "details": {
     "captureSite": "Carpenter Net",
@@ -53,14 +53,14 @@ TODO: netEnter, netExit, and release are the same most of the time. Maybe throw 
     "bagAndBirdWeight": 22.5,
     "notes": "hallux 8.8",
     "weather": "Clear, 55F",
-    "banders": "Lindsay, Szarmach",
+    "banders": "Lindsay, Szarmach"
   },
   "timestamps": {
     "log": 1507579380,
     "capture": 1507296600, 
     "netEnter": 1507262400,
     "netExit": 1507262400,
-    "release": 1507262400,
+    "release": 1507262400
   }
 }
 ```
