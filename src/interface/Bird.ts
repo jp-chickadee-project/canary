@@ -1,5 +1,17 @@
 
-export interface Measurements {
+export type species = 'RBNU' | 'something-else';
+export type sex = 'male' | 'female' | 'unknown';
+
+export interface Bird {
+  id: string;
+  bandCombo: string;
+  biometrics: Biometrics;
+  details: Details;
+}
+
+export interface Biometrics {
+  species: species;
+  sex: sex;
   bib: number;
   bill: {
     depth: number;
@@ -26,22 +38,6 @@ export interface Details {
     capture: number;
     enter: number;
     exit: number;
+    release: number;
   };
-  legRightTop: string;
-  legRightBottom: string;
-  legLeftTop: string;
-  legLeftBottom: string;
-}
-
-export type species = 'RBNU' | 'something-else';
-export type sex = 'male' | 'female' | 'unknown';
-
-export interface Bird {
-  rfid: string;
-  bandCombo: string;
-  release: number;
-  species: species;
-  sex: sex;
-  measurements?: Measurements;
-  details?: Details;
 }

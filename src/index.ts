@@ -5,7 +5,7 @@ import { createConnection } from 'typeorm';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
-import { keyBy } from 'lodash';
+import { keyBy, map } from 'lodash';
 
 const app: express.Application = express();
 
@@ -30,6 +30,11 @@ import {
   Visit,
 } from './entity';
 
+import { Bird as IBird, species, sex } from './interface/Bird';
+
+type Dictionary<T> = { [key: string]: T };
+type Birds = Dictionary<IBird>;
+
 import {
   Feeders,
 } from 'jpcp-models';
@@ -49,14 +54,21 @@ createConnection()
 
     app.get('/api/birds', (req, res) => {
       birds.find()
-        .then(birds => res.json(birds))
+        .then(response => {
+          const formattedBirds = map(response, formatBird);
+          const formatted: Birds = keyBy(formattedBirds, 'id');
+          res.json(formatted);
+        })
         .catch(error => console.log(error));
     });
 
     app.get('/api/birds/:rfid', (req, res) => {
       const rfid: string = req.params.rfid;
       birds.findOne(rfid)
-        .then(bird => res.json(bird))
+        .then(response => {
+          const formatted: IBird = formatBird(response);
+          res.json(formatted);
+        })
         .catch(error => console.log(error));
     });
 
@@ -72,7 +84,7 @@ createConnection()
     app.get('/api/feeders/:id', (req, res) => {
       const id: string = req.params.id;
       feeders.findOne(id)
-        .then(feeders => res.json(feeders))
+        .then(response => res.json(response))
         .catch(error => console.log(error));
     });
     
@@ -88,3 +100,41 @@ createConnection()
     });
   })
   .catch(error => console.log(error));
+
+  function formatBird(bird: Bird): IBird {
+    return {
+      id: bird.rfid,
+      bandCombo: bird.bandCombo,
+      biometrics: {
+        species: bird.species as species,
+        sex: bird.suspectedSex as sex,
+        bib: bird.bibWidth,
+        bill: {
+          depth: bird.billDepth,
+          width: bird.billWidth,
+          length: bird.billLength,
+        },
+        tarsus: bird.tarsusLength,
+        cap: bird.capLength,
+        longestSecondary: bird.longestSecondary,
+        wingChord: bird.wingChordLength,
+        tail: bird.tailLength,
+        weight: bird.birdWeight,
+      },
+      details: {
+        banders: bird.banders,
+        weather: bird.weather,
+        notes: bird.notes,
+        tissueSample: bird.tissueSample,
+        captureSite: bird.captureSite,
+        bandNumber: bird.bandNumber,
+        timestamps: {
+          log: bird.logTimestamp,
+          capture: bird.captureTimestamp,
+          enter: bird.netEnterTimestamp,
+          exit: bird.netExitTimestamp,
+          release: bird.releasedTimestamp,
+        },
+      },
+    };
+  }
