@@ -43,7 +43,7 @@ TODO: netEnter, netExit, and release are the same most of the time. Maybe only k
     "bib": 0,
     "cap": 0,
     "tarsus": 16.5,
-    "birdWeight": 10.2,
+    "weight": 10.2,
     "tissueSample": "feather"
   },
   "details": {
