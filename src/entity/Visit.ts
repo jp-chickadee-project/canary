@@ -14,6 +14,4 @@ export class Visit implements IVisit<string, string> {
   @Column({ type: 'char', length: 4, }) feeder: string;
 
   @Column({ type: 'bigint', precision: 20, nullable: false, }) timestamp: number;
-
-  @Column({ type: 'varchar', length: 32, }) bandCombo: string;
 }
