@@ -5,13 +5,17 @@
 |-|-|-|
 | GET | /api/visits | List of visits (limit 50) |
 
-
 ## Birds
-
 | Verb | Endpoint | Returns |
 |-|-|-|
 | GET | /api/birds | List of all birds |
 | GET | /api/birds/:rfid | The bird |
+
+## Feeders
+| Verb | Endpoint | Returns |
+|-|-|-|
+| GET | /api/feeders | List of all feeders |
+| GET | /api/feeders/:id | The feeder |   
 
 notes:
 

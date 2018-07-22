@@ -40,9 +40,22 @@ createConnection()
         .then(bird => res.json(bird))
         .catch(error => console.log(error));
     });
+
+    app.get('/api/feeders', (req, res) => {
+      feeders.find()
+        .then(feeders => res.json(feeders))
+        .catch(error => console.log(error));
+    });
+
+    app.get('/api/feeders/:id', (req, res) => {
+      const id: string = req.params.id;
+      feeders.findOne(id)
+        .then(feeders => res.json(feeders))
+        .catch(error => console.log(error));
+    });
     
     app.get('/api/visits', (req, res) => {
-      visits.find()
+      visits.find({ take: 50 })
         .then((visits) => res.json(visits))
         .catch(error => console.log(error));
     });
