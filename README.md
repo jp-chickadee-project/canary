@@ -5,11 +5,65 @@
 |-|-|-|
 | GET | /api/visits | List of visits (limit 50) |
 
+```
+{
+  "id":1,
+  "bird":"011017121E",
+  "feeder":"HMST",
+  "timestamp":"1506782685", // TODO: make an integer
+  "bandCombo":"#O/wg" // TODO: remove
+}
+```
+
 ## Birds
 | Verb | Endpoint | Returns |
 |-|-|-|
 | GET | /api/birds | List of all birds |
 | GET | /api/birds/:rfid | The bird |
+
+```
+TODO: netEnter, netExit, and release are the same most of the time. Maybe throw two of them away.
+
+// proposed format
+
+{
+  "rfid": "011016A269",
+  "bandCombo": "g0/Y#",
+  "biometrics": {
+    "species": "RBNU",
+    "sex": "female",
+    "tail": 37,
+    "wingChord": 66,
+    "longestSecondary": 54,
+    "bill": {
+      "depth": 3.5,
+      "width": 3.4,
+      "length": 10.3
+    },
+    "bib": 0,
+    "cap": 0,
+    "tarsus": 16.5,
+    "birdWeight": 10.2,
+    "tissueSample": "feather",
+  },
+  "details": {
+    "captureSite": "Carpenter Net",
+    "bandNumber":" 2830-56001",
+    "bagWeight": 12.3,
+    "bagAndBirdWeight": 22.5,
+    "notes": "hallux 8.8",
+    "weather": "Clear, 55F",
+    "banders": "Lindsay, Szarmach",
+  },
+  "timestamps": {
+    "log": 1507579380,
+    "capture": 1507296600, 
+    "netEnter": 1507262400,
+    "netExit": 1507262400,
+    "release": 1507262400,
+  }
+}
+```
 
 ## Feeders
 | Verb | Endpoint | Returns |
