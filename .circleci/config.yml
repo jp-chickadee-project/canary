@@ -17,6 +17,9 @@ jobs:
           name: install
           command: 'sudo npm install'
       - run:
+          name: database-client
+          command: 'sudo apt install mysql-client'
+      - run:
           name: database-online
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
       - run:
