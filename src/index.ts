@@ -78,8 +78,30 @@ createConnection()
         .then((visits) => res.json(visits))
         .catch(error => console.log(error));
     });
+
+    app.get('/api/visits/latest', (req, res) => {
+      let match = {};
+      const rfid: string = req.query.rfid;
+      if (rfid) {
+        match['rfid'] = rfid;
+      }
+      const feeder: string = req.query.feederID;
+      if (feeder) {
+        match['feederID'] = feeder;
+      }
+      const count: number = req.query.limit
+      visits.find({
+        take: count,
+        where: match,
+        order: {
+          visitTimestamp: 'DESC',
+        }
+      })
+        .then((visits) => res.json(visits))
+        .catch(error => console.log(error));
+    });
     
-    const port = 8156;
+    const port = 36361;
     app.listen(port, () => {
       console.log(`running on http://localhost:${port}/`);
     });
