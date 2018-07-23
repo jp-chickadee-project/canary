@@ -13,21 +13,18 @@ jobs:
 
     steps:
       - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run: yarn install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # run tests!
-      - run: yarn test
-
+      - run:
+        name: install
+        command: 'sudo npm install'
+      - run:
+        name: database-online
+        command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
+      - run:
+        name: database-setup
+        command: 'mysql < src/migration/initial-create.sql'
+      - run:
+        name: database-test-seed
+        command: 'mysql < src/migration/test-seed.sql'
+      - run:
+        name: database-migrate
+        command: 'npm run migrate:up'
