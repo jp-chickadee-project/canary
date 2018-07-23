@@ -1,5 +1,5 @@
 
-import { Entity, PrimaryColumn, Column } from 'typeorm';
+import { Entity, PrimaryColumn, Column, AfterLoad } from 'typeorm';
 
 @Entity({name: 'birds'})
 export class Bird {
@@ -46,5 +46,26 @@ export class Bird {
 
   @Column({ type: 'varchar', length: 64, nullable: true, }) banders: string;
 
-  @Column({ type: 'varchar', length: 32, nullable: true, }) bandCombo: string; 
+  @Column({ type: 'varchar', length: 32, nullable: true, }) bandCombo: string;
+
+  @AfterLoad()
+  parse() {
+    this.billDepth = parseFloat(this.billDepth as any);
+    this.billWidth = parseFloat(this.billWidth as any);
+    this.billLength = parseFloat(this.billLength as any);
+
+    this.bibWidth = parseFloat(this.bibWidth as any);
+    this.capLength = parseFloat(this.capLength as any);
+    this.tarsusLength = parseFloat(this.tarsusLength as any);
+
+    this.birdWeight = parseFloat(this.birdWeight as any);
+    this.bagAndBirdWeight = parseFloat(this.bagAndBirdWeight as any);
+    this.bagWeight = parseFloat(this.bagWeight as any);
+
+    this.captureTimestamp = parseFloat(this.captureTimestamp as any);
+    this.logTimestamp = parseFloat(this.logTimestamp as any);
+    this.netEnterTimestamp = parseFloat(this.netEnterTimestamp as any);
+    this.netExitTimestamp = parseFloat(this.netExitTimestamp as any);
+    this.releasedTimestamp = parseFloat(this.releasedTimestamp as any);
+  }
 }
