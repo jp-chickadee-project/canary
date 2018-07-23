@@ -21,13 +21,13 @@ jobs:
           command: 'sudo apt install mysql-client'
       - run:
           name: database-online
-          command: 'sudo /etc/init.d/mysql start'
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
       - run:
           name: database-setup
-          command: 'mysql jpcp_dev < src/migration/initial-create.sql'
+          command: 'mysql -h 127.0.0.1 -u root jpcp_dev < src/migration/initial-create.sql'
       - run:
           name: database-test-seed
-          command: 'mysql jpcp_dev < src/migration/test-seed.sql'
+          command: 'mysql -h 127.0.0.1 -u root jpcp_dev < src/migration/test-seed.sql'
       - run:
           name: database-migrate
           command: 'npm run migrate:up'
