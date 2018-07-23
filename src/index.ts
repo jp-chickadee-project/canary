@@ -61,9 +61,9 @@ createConnection()
         .catch(error => console.log(error));
     });
 
-    app.get('/api/birds/:rfid', (req, res) => {
-      const rfid: string = req.params.rfid;
-      birds.findOne(rfid)
+    app.get('/api/birds/:id', (req, res) => {
+      const id: string = req.params.id;
+      birds.findOne(id)
         .then(response => {
           const formatted: IBird = formatBird(response);
           res.json(formatted);

@@ -2,16 +2,22 @@
 
 ## Visits
 | Verb | Endpoint | Returns |
-|-|-|-|
+|-|-|-|-|
 | GET | /api/visits | List of visits (limit 50) |
 
 ```
+// TODO: add part parameter
 {
   "id": 1,
-  "bird": "011017121E",
-  "feeder": "HMST",
-  "timestamp": "1506782685", // TODO: make an integer
-  "bandCombo": "#O/wg" // TODO: remove
+  "bird": {
+    "id": "011017121E",
+    "bandCombo": "#O/wg"
+  },
+  "feeder": {
+    "id": "HMST",
+    "name": "Homestead" 
+  },
+  "timestamp": 1506782685
 }
 ```
 
@@ -69,7 +75,18 @@ TODO: netEnter, netExit, and release are the same most of the time. Maybe only k
 | Verb | Endpoint | Returns |
 |-|-|-|
 | GET | /api/feeders | Dictionary of feeders, keyed by id |
-| GET | /api/feeders/:id | The feeder |   
+| GET | /api/feeders/:id | The feeder |
+
+```
+{
+  "id": "HMST",
+  "name": "Homestead",
+  "location": {
+    "latitude": 46.55458,
+    "longitude": -87.433253
+  }
+}
+```
 
 notes:
 
