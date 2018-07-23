@@ -4,10 +4,10 @@ jobs:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
       - image: circleci/mysql:5.7.22
-      environment:
-        MYSQL_ALLOW_EMPTY_PASSWORD: yes
-        MYSQL_ROOT_PASSWORD: 'p'
-        MYSQL_DATABASE: jpcp_dev
+        environment:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_ROOT_PASSWORD: 'p'
+          MYSQL_DATABASE: jpcp_dev
 
     working_directory: ~/repo
 
