@@ -48,6 +48,8 @@ export class Bird {
 
   @Column({ type: 'varchar', length: 32, nullable: true, }) bandCombo: string;
 
+  @Column({ type: 'tinyint', precision: 1, }) isSynced: string;
+
   @AfterLoad()
   parse() {
     this.billDepth = parseFloat(this.billDepth as any);

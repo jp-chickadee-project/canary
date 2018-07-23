@@ -9,4 +9,5 @@ export class Feeder {
   @Column({ type: 'varchar', length: 64, nullable: false, }) fullName: string;
   @Column({ type: 'double', }) latitude: number;
   @Column({ type: 'double', }) longitude: number;
+  @Column({ type: 'tinyint', precision: 1, }) isSynced: string;
 }

@@ -14,6 +14,7 @@ export class Visit {
   @Column({ type: 'bigint', precision: 20, nullable: false, }) visitTimestamp: number;
   
   @Column({ type: 'varchar', length:32, }) bandCombo: number;
+  @Column({ type: 'tinyint', precision: 1, }) isSynced: string;
 
   @AfterLoad()
   parse() {
