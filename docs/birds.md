@@ -4,6 +4,8 @@
 A **bird** resource contains information about a bird.
 
 ### Representation
+
+#### Bird
 ```javascript
 {
   "id": string,
@@ -12,8 +14,9 @@ A **bird** resource contains information about a bird.
   "biometrics": Biometrics,
   "details": Details
 }
-
-// Biometrics
+```
+#### Biometrics
+```javascript
 {
   "species": string,
   "sex": string,
@@ -30,8 +33,9 @@ A **bird** resource contains information about a bird.
   "tail": number,
   "weight": number 
 }
-
-// Details
+```
+#### Details
+```javascript
 {
   "banders": string,
   "weather": string,
