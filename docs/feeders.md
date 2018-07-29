@@ -21,9 +21,7 @@ Since feeders do not have an order in relation each other, by default they are r
 
 ```javascript
 {
-  "id_a": Feeder,
-  "id_b": Feeder,
-  "id_c": Feeder
+  (id): Feeder
 }
 ```
 
