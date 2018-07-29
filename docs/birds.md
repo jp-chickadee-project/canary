@@ -52,3 +52,9 @@ A **bird** resource contains information about a bird.
   }
 }
 ```
+### Read
+```GET /api/birds```
+Since a collection of birds do not have an order in relation to each other, by default they are returned as a `Dictionary` of `Bird`s.
+{
+  (id): Bird
+}
