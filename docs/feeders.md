@@ -7,7 +7,7 @@ A **feeder** resource contains information about bird feeder.
 ```javascript
 {
   "id": string,
-  "rfid": string,
+  "code": string,
   "name": string,
   "location": {
     "latitude": number,
