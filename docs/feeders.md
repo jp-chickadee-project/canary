@@ -17,7 +17,7 @@ A **feeder** resource contains information about bird feeder.
 ```
 
 `GET /api/feeders`
-Since feeders do not have an order in relation each other, by default they are returned as a `Dictionary` of `Feeder`s.
+Since **feeders** do not have an order in relation to each other, by default they are returned as a `Dictionary` of `Feeder`s.
 
 ```javascript
 {
