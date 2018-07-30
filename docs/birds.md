@@ -1,7 +1,7 @@
 
 ## Birds
 
-A **bird** resource contains information about a bird. If you only need certain properties of a bird, you may specify them using the ```properties``` parameter.
+A **bird** resource contains information about a bird. If you only need certain properties of a bird, you may specify them using the ```parts``` parameter.
 
 ### Representation
 
